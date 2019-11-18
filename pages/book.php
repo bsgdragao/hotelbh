@@ -6,7 +6,7 @@
 // http://www.netartmedia.net
 // Released under the MIT license
 ?><?php
-//require_once './lib/ARQUIVOS/CSV.class.php';
+require_once './arquivos/CSV.class.php';
 
 
 if(!defined('IN_SCRIPT')) die("");
@@ -55,7 +55,7 @@ if(isset($_POST["ProceedBooking"]))
 		echo "<h3 class=\"red-font\">".$this->texts["wrong_code"]."</h3>";
 	}
 	
-	$csv = new \ARQUIVOS\Csv( 'rows.csv' );
+	$csv = new \arquivos\Csv( 'rows.csv' );
 
 	foreach( $csv->ler() as $linha )
     var_dump( $linha );
@@ -133,6 +133,19 @@ if(isset($_POST["ProceedBooking"]))
 if(!isset($_POST["ProceedBooking"])||$process_error!="")
 {
 
+	require __DIR__ . '/ImportCSV.php';
+	$import = new ImportCSV;
+	$import->setFile('rows.csv', true);
+	foreach($import->getData() as $data) {
+    $dataCity = [
+        'cliente.cpf' => $data[0],
+    ];
+    var_dump($dataCity);
+    //
+}
+	var_dump($import->getData());
+	var_dump($data);
+
 
 ?>
 
@@ -145,8 +158,13 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 <input type="hidden" name="start_time" value="<?php if(isset($_REQUEST["start_time"])) echo $_REQUEST["start_time"];?>"/>
 <input type="hidden" name="end_time" value="<?php if(isset($_REQUEST["end_time"])) echo $_REQUEST["end_time"];?>"/>
 <input type="hidden" name="nights" value="<?php if(isset($_REQUEST["nights"])) echo $_REQUEST["nights"];?>"/>
+
+
+
+
+
 <input type="hidden" name="ProceedBooking" value="1"/>
-	<fieldset>
+	<!-- <fieldset>
 		<legend><?php echo $this->texts["please_enter_contact"];?></legend>
 		<ol>
 			
@@ -164,7 +182,7 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 				<input id="phone" <?php if(isset($_REQUEST["phone"])) echo "value=\"".$_REQUEST["phone"]."\"";?> name="phone" placeholder="" type="text"/>
 			</li>
 			<?php
-			if($this->settings["website"]["use_captcha_images"]==1)
+			 if($this->settings["website"]["use_captcha_images"]==1)
 			{
 			?>
 			<li>
@@ -191,11 +209,11 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 				<textarea id="remarks" name="remarks" rows="8"><?php if(isset($_REQUEST["remarks"])) echo stripslashes($_REQUEST["remarks"]);?></textarea>
 			</li>
 	</ol>
-	</fieldset>
-
+	</fieldset> -->
+<!-- 
 	<fieldset>
 		<button type="submit" class="btn btn-primary pull-right"><?php echo $this->texts["book_now"];?></button>
-	</fieldset>
+	</fieldset> -->
 </form>
 
 

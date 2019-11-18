@@ -6,6 +6,9 @@
 // http://www.netartmedia.net
 // Released under the MIT license
 ?><?php
+//require_once './lib/ARQUIVOS/CSV.class.php';
+
+
 if(!defined('IN_SCRIPT')) die("");
 $process_error="";
 
@@ -52,11 +55,17 @@ if(isset($_POST["ProceedBooking"]))
 		echo "<h3 class=\"red-font\">".$this->texts["wrong_code"]."</h3>";
 	}
 	
+	$csv = new \ARQUIVOS\Csv( 'rows.csv' );
+
+	foreach( $csv->ler() as $linha )
+    var_dump( $linha );
 	
 	if($process_error=="")
 	{
 		if($_POST["name"]!=""&&$_POST["email"]!="")
 		{
+			
+
 			//Saving the booking information in the XML file
 			$bookings = simplexml_load_file($this->booking_file);
 			$booking = $bookings->addChild('booking');

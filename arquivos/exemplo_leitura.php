@@ -1,7 +1,7 @@
 
 <form action="exemplo_leitura.php" method="get">
-    CPF:  <input type="text" name="cliente.cpf" /><br />
-    <input type="submit" name="submit" value="Me aperte!" />
+    CPF:  <input type="text" name="cliente_cpf" /><br />
+    <input type="submit" value="Me aperte!" />
 </form>
 
 <?php 
@@ -19,13 +19,12 @@ require_once './csv.class.php' ;
 $csv = new \arquivos\Csv( 'rows.csv',',','"' );
 
 # 2.5 Instanciando o Objeto de Manipulação de dados
-
- $CPF_user = $_POST['cliente.cpf']; // receber cpf do user
+ $CPF_user = $_GET['cliente_cpf']; // receber cpf do user
  $lines = file('./rows.csv'); // array com as linhas do file.csv
 foreach($lines as $l) { // percorrer as linhas
     $params = explode(',', $l); // dividir linha pelo separador de colunas
     if($params[2] == $CPF_user) {
-        $name_user = $params[0]; // caso seja encontrado o $name_user fica definido
+        $user = $params; // caso seja encontrado o $name_user fica definido
          break; // escusado continuar a percorrer as linhas
          
     }
@@ -33,13 +32,13 @@ foreach($lines as $l) { // percorrer as linhas
     
 }
 
-if(isset($name_user)) {
-    // encontrado
+if(isset($user)) {
+    echo $user[1] . ' - CPF: ' . $user[2];
 }
  
 # 3. Obtendo os resultados
-foreach( $csv->ler() as $linha )
-    var_dump( $linha );
+/* foreach( $csv->ler() as $linha )
+    var_dump( $linha ); */
 
 
 /**

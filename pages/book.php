@@ -6,9 +6,6 @@
 // http://www.netartmedia.net
 // Released under the MIT license
 ?><?php
-require_once './arquivos/CSV.class.php';
-
-
 if(!defined('IN_SCRIPT')) die("");
 $process_error="";
 
@@ -55,17 +52,11 @@ if(isset($_POST["ProceedBooking"]))
 		echo "<h3 class=\"red-font\">".$this->texts["wrong_code"]."</h3>";
 	}
 	
-	$csv = new \arquivos\Csv( 'rows.csv' );
-
-	foreach( $csv->ler() as $linha )
-    var_dump( $linha );
 	
 	if($process_error=="")
 	{
 		if($_POST["name"]!=""&&$_POST["email"]!="")
 		{
-			
-
 			//Saving the booking information in the XML file
 			$bookings = simplexml_load_file($this->booking_file);
 			$booking = $bookings->addChild('booking');
@@ -120,16 +111,6 @@ if(isset($_POST["ProceedBooking"]))
 			//End sending email notification
 				?>
 				<h3><?php echo $this->texts["receive_booking_confirmed"];?></h3>
-				<p>
-					<h2><a href="http://www.pagseguro.com.br/checkout/charging/payCharging.jhtml?id=3bcab90576b615dd4c67ae8b0951f2c9"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <img  alt="Garantir reserva" src="images/pagar.png" width="140" height="60"  > </a></h2>
-				</p>
-
-
-				<h1>Pesquisar Cursos</h1>
-<form method="POST" action="pesquisar.php">
-    Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
-    <input type="submit" value="ENVIAR">
-</form>
 				<?php
 			
 		}
@@ -137,24 +118,8 @@ if(isset($_POST["ProceedBooking"]))
 
 }
 
-
-
-
 if(!isset($_POST["ProceedBooking"])||$process_error!="")
 {
-
-	require __DIR__ . '/ImportCSV.php';
-	$import = new ImportCSV;
-	$import->setFile('rows.csv', true);
-	foreach($import->getData() as $data) {
-    $dataCity = [
-        'cliente.cpf' => $data[0],
-    ];
-    var_dump($dataCity);
-    //
-}
-	var_dump($import->getData());
-	var_dump($data);
 
 
 ?>
@@ -168,13 +133,8 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 <input type="hidden" name="start_time" value="<?php if(isset($_REQUEST["start_time"])) echo $_REQUEST["start_time"];?>"/>
 <input type="hidden" name="end_time" value="<?php if(isset($_REQUEST["end_time"])) echo $_REQUEST["end_time"];?>"/>
 <input type="hidden" name="nights" value="<?php if(isset($_REQUEST["nights"])) echo $_REQUEST["nights"];?>"/>
-
-
-
-
-
 <input type="hidden" name="ProceedBooking" value="1"/>
- <fieldset>
+	<fieldset>
 		<legend><?php echo $this->texts["please_enter_contact"];?></legend>
 		<ol>
 			
@@ -192,7 +152,7 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 				<input id="phone" <?php if(isset($_REQUEST["phone"])) echo "value=\"".$_REQUEST["phone"]."\"";?> name="phone" placeholder="" type="text"/>
 			</li>
 			<?php
-			 if($this->settings["website"]["use_captcha_images"]==1)
+			if($this->settings["website"]["use_captcha_images"]==1)
 			{
 			?>
 			<li>
@@ -225,8 +185,6 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 		<button type="submit" class="btn btn-primary pull-right"><?php echo $this->texts["book_now"];?></button>
 	</fieldset>
 </form>
-
-
 <?php
 }
 

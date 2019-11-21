@@ -123,12 +123,22 @@ if(isset($_POST["ProceedBooking"]))
 				<p>
 					<h2><a href="http://www.pagseguro.com.br/checkout/charging/payCharging.jhtml?id=3bcab90576b615dd4c67ae8b0951f2c9"> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <img  alt="Garantir reserva" src="images/pagar.png" width="140" height="60"  > </a></h2>
 				</p>
+
+
+				<h1>Pesquisar Cursos</h1>
+<form method="POST" action="pesquisar.php">
+    Pesquisar:<input type="text" name="pesquisar" placeholder="PESQUISAR">
+    <input type="submit" value="ENVIAR">
+</form>
 				<?php
 			
 		}
 	}
 
 }
+
+
+
 
 if(!isset($_POST["ProceedBooking"])||$process_error!="")
 {
@@ -164,7 +174,7 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 
 
 <input type="hidden" name="ProceedBooking" value="1"/>
-	<!-- <fieldset>
+ <fieldset>
 		<legend><?php echo $this->texts["please_enter_contact"];?></legend>
 		<ol>
 			
@@ -209,11 +219,11 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 				<textarea id="remarks" name="remarks" rows="8"><?php if(isset($_REQUEST["remarks"])) echo stripslashes($_REQUEST["remarks"]);?></textarea>
 			</li>
 	</ol>
-	</fieldset> -->
-<!-- 
+	</fieldset>
+
 	<fieldset>
 		<button type="submit" class="btn btn-primary pull-right"><?php echo $this->texts["book_now"];?></button>
-	</fieldset> -->
+	</fieldset>
 </form>
 
 

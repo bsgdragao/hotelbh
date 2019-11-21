@@ -19,6 +19,7 @@ require_once './csv.class.php' ;
 $csv = new \arquivos\Csv( 'rows.csv',',','"' );
 
 # 2.5 Instanciando o Objeto de Manipulação de dados
+error_reporting(0); //GAMBIARA BY: PAULO
  $CPF_user = $_GET['cliente_cpf']; // receber cpf do user
  $lines = file('./rows.csv'); // array com as linhas do file.csv
 foreach($lines as $l) { // percorrer as linhas

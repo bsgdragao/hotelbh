@@ -125,6 +125,7 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 ?>
 
 
+	
 <form id="main" action="index.php" method="post" >
 <input type="hidden" name="page" value="book"/>
 <input type="hidden" name="id" value="<?php echo $id;?>"/>
@@ -141,12 +142,11 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 			
 			<li>
 				<label for="name"><?php echo $this->texts["name"];?>(*)</label>
-				<input id="name" <?php if(isset($_REQUEST["name"])) echo $cpf ;?> name="name" placeholder="" type="text" required/>
+				<input id="name" <?php if(isset($_SESSION['nome'])) echo "value=\"".$_SESSION['nome']."\"";?> name="name" placeholder="" type="text"/>
 			</li>
 			<li>
 				<label for="email"><?php echo $this->texts["email"];?>(*)</label>
-				<input id="email" <?php if(isset($_REQUEST["email"])) echo "value=\"".$_REQUEST["email"]."\"";?> name="email" placeholder="example@domain.com" type="email" required/>
-				
+				<input id="name" <?php if(isset($_SESSION['cpf'])) echo "value=\"".$_SESSION['cpf']."\"";?> name="email" placeholder="" type="text"/>
 			</li>
 			<li>
 				<label for="phone"><?php echo $this->texts["phone"];?></label>

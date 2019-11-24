@@ -1,36 +1,55 @@
-
 <title>Login</title>
 <div>
     <img src="../images/barra.png">
 </div>
 
 <div>
-    <h1>FAÇA O SEU LOGIN:</h1>
+    <h1>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <u>BEM VINDO AO HOTEL BH</u> <br/><br/> </h1>
+    <h2>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    FAÇA O SEU LOGIN PARA EFETUAR UMA RESERVA:</h2>
 </div>
 
 <div> 				
-    <h2>&nbsp 1ª vez no BH? </h2>
-    <h2>&nbsp &nbsp &nbsp Faça seu cadastro...</h2>
-    <h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-    <a href="http://127.0.0.1:8000/cadastry/default/cliente" target="_blank">CLIQUE AQUI PARA CADASTRO. </a> </h2>
+    <h2>
+    &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+    &nbsp 1ª vez no BH? </h2>
+    <h2>&nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp
+    Preencha o formulário e aguarde o email de liberação do seu cadastro...</h2>
+    <h2><br/> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    <a href="http://127.0.0.1:8000/cadastry/default/cliente" target="_blank">CLIQUE AQUI PARA PREENCHER O FORMULÁRIO. </a> </h2>
 </div>
 
 <form action="exemplo_leitura.php" method="get">
-<h1> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-CLIENTE COM CADASTRADO: <br/></h1>
+<h1> <br/> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<u>CLIENTE COM CADASTRADO:</u> <br/></h1>
 <h2> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 &nbsp &nbsp &nbsp &nbsp 
-Pesquise pelo seu CPF:  <input type="text" name="cliente_cpf" /><br /> 
+Pesquise pelo seu CPF:  <input type="text" name="cliente_cpf" /> 
 <br/>&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
-&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 &nbsp &nbsp &nbsp &nbsp
  <input type="submit" value="Pesquisar cadastro" /> </h2>
 </form>
-
-
 <?php 
 session_start();
 
@@ -51,7 +70,7 @@ error_reporting(0); //GAMBIARA BY: PAULO
  $lines = file('./rows.csv'); // array com as linhas do file.csv
 foreach($lines as $l) { // percorrer as linhas
     $params = explode(',', $l); // dividir linha pelo separador de colunas
-    if($params[2] == $CPF_user) {
+    if($params[3] == $CPF_user) {
         $user = $params; // caso seja encontrado o $name_user fica definido
          break; // escusado continuar a percorrer as linhas
          
@@ -61,13 +80,13 @@ foreach($lines as $l) { // percorrer as linhas
 }
 
 if(isset($user)) {
-    echo "<font size=12> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-     Cliente: $user[1] - CPF: $user[2] &nbsp <a href= 'http://localhost/hotelbh/index.php' >Clique para selecionar e reservar!</a> </font>";
+    echo "<font size=6> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+     Cliente: $user[1] - CPF: $user[3] &nbsp <a href= 'http://localhost/hotelbh/index.php' >Clique para selecionar e reservar!</a> </font>";
 }
 
 
 $nomeC = $user[1];
-$cpfC = $user[2];
+$cpfC = $user[3];
 
 $_SESSION['cpf'] = $cpfC;
 $_SESSION['nome'] = $nomeC;

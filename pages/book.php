@@ -166,11 +166,11 @@ if(!isset($_POST["ProceedBooking"])||$process_error!="")
 			</li>
 			<li>
 				<label for="email"><?php echo $this->texts["email"];?>(*)</label>
-				<input id="name" <?php if(isset($_SESSION['cpf'])) echo "value=\"".$_SESSION['cpf']."\"";?> name="email" placeholder="" type="text"/>
+				<input id="email" <?php if(isset($_REQUEST["email"])) echo "value=\"".$_REQUEST["email"]."\"";?> name="email" placeholder="example@domain.com - OBRIGATÓRIO INSERIR O EMAIL PARA RECEBER OS DADOS DA RESERVA" type="email" required/>
 			</li>
 			<li>
-				<label for="phone"><?php echo $this->texts["phone"];?></label>
-				<input id="phone" <?php if(isset($_REQUEST["phone"])) echo "value=\"".$_REQUEST["phone"]."\"";?> name="phone" placeholder="" type="text"/>
+				<label for="phone"><?php echo $this->texts["phone"];?>(*)</label>
+				<input id="phone" <?php if(isset($_SESSION['cpf'])) echo "value=\"".$_SESSION['cpf']."\"";?> name="phone" placeholder="" type="text"/>
 			</li>
 			<?php
 			if($this->settings["website"]["use_captcha_images"]==1)

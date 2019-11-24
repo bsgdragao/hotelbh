@@ -1,11 +1,35 @@
 
+<title>Login</title>
+<div>
+    <img src="../images/barra.png">
+</div>
+
+<div>
+    <h1>FAÇA O SEU LOGIN:</h1>
+</div>
+
+<div> 				
+    <h2>&nbsp 1ª vez no BH? </h2>
+    <h2>&nbsp &nbsp &nbsp Faça seu cadastro...</h2>
+    <h2>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <a href="http://127.0.0.1:8000/cadastry/default/cliente" target="_blank">CLIQUE AQUI PARA CADASTRO. </a> </h2>
+</div>
+
 <form action="exemplo_leitura.php" method="get">
-     ATENÇÃO CLIENTE CADASTRADO!!! <br/><br/>
-     Pesquise pelo seu... <br/><br/>
-        CPF:  <input type="text" name="cliente_cpf" /><br />
-   <br/> &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp
-   <input type="submit" value="Pesquisar cadastro" />
+<h1> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+CLIENTE COM CADASTRADO: <br/></h1>
+<h2> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+&nbsp &nbsp &nbsp &nbsp 
+Pesquise pelo seu CPF:  <input type="text" name="cliente_cpf" /><br /> 
+<br/>&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp
+ <input type="submit" value="Pesquisar cadastro" /> </h2>
 </form>
+
 
 <?php 
 
@@ -37,16 +61,17 @@ foreach($lines as $l) { // percorrer as linhas
 }
 
 if(isset($user)) {
-    echo $user[1] . ' - CPF: ' . $user[2];
+    echo "<font size=12> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+     Cliente selecionado: $user[1] - CPF: $user[2]</font>";
 }
 
-$nome = $user[1];
-$cpf= $user[2];
 
-/* echo $nome;
-echo $cpf; */
+$cpf = $user[1];
+$nome = $user[2];
 
- 
+/* echo $cpf;
+echo $nome; */
+
 # 3. Obtendo os resultados
 /* foreach( $csv->ler() as $linha )
     var_dump( $linha ); */

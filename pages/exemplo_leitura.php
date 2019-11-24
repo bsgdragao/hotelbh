@@ -32,7 +32,7 @@ Pesquise pelo seu CPF:  <input type="text" name="cliente_cpf" /><br />
 
 
 <?php 
-
+session_start();
 
 # Como esse arquivo exemplo não tem formatação, 
 # setamos a saida de texto como padrao UTF-8 
@@ -62,12 +62,15 @@ foreach($lines as $l) { // percorrer as linhas
 
 if(isset($user)) {
     echo "<font size=12> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-     Cliente selecionado: $user[1] - CPF: $user[2]</font>";
+     Cliente: $user[1] - CPF: $user[2] &nbsp <a href= 'http://localhost/hotelbh/index.php' >Clique para selecionar e reservar!</a> </font>";
 }
 
 
-$cpf = $user[1];
-$nome = $user[2];
+$nomeC = $user[1];
+$cpfC = $user[2];
+
+$_SESSION['cpf'] = $cpfC;
+$_SESSION['nome'] = $nomeC;
 
 /* echo $cpf;
 echo $nome; */

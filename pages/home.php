@@ -101,12 +101,10 @@ function ValidateForm(form)
 		</div>
 	</div>
 	</div> 
-				
-				<h2><br/> &nbsp &nbsp 1ª vez no BH? </h2>
-				<h2> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Faça seu cadastro antes de reservar, facilite o seu check-in...</h2>
-				<h1><a href="http://127.0.0.1:8000/cadastry/default/cliente" target="_blank">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Clique aqui e cadastre seus dados... </a> </h2>
-
-			</div>
+	<?php
+	echo "Cliente: &nbsp".  $_SESSION['nome']. " &nbspCPF: &nbsp". $_SESSION['cpf'];
+?>			
+	</div>
 
 
 </div>

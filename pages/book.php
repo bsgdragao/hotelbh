@@ -77,7 +77,9 @@ if(isset($_POST["ProceedBooking"]))
 			$bookings->asXML($this->booking_file); 
 			//End saving in the XML file
 			
-			$_SESSION['precoR'] = $price;
+			$precod= $listings->listing[$id]->price * $number_nights;
+			$precoRes= (double)$precod;
+			
 
 			//Sending an email notification to the site owner
 			$_POST["name"]=strip_tags(stripslashes($_POST["name"]));
@@ -110,20 +112,26 @@ if(isset($_POST["ProceedBooking"]))
 				);
 			//End sending email notification
 				?>
+
 				<h3><?php echo $this->texts["receive_booking_confirmed"];?></h3>
 				<h3><br/>Pague sua reserva aqui...</h3>
+				
+				
 
 	<form target="pagseguro" action="https://pagseguro.uol.com.br/v2/checkout/cart.html?action=add" method="post">
     <input type="hidden" name="receiverEmail" value="bsgdragao@gmail.com" />
     <input type="hidden" name="currency" value="BRL" />
     <input type="hidden" name="itemId" value="0001" />
     <input type="hidden" name="itemDescription" value="Reserva" />
-    <input type="hidden" name="itemQuantity" value="1" />
-    <input type="hidden" name="itemAmount" value="1.00" />
+	<input type="hidden" name="itemQuantity" value="1" />
+	<input type="hidden" name="itemAmount" value="<?php echo number_format($precoRes, 2, '.', ',');?>"/>    
     <input type="hidden" name="itemWeight" value="18000" />
     <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/184x42-pagar-cinza-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-    </form>
+	</form>
+	
+
 				<?php
+				
 			
 		}
 	}

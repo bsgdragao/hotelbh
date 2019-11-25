@@ -1,15 +1,15 @@
 cliente.id,cliente.nome,cliente.email,cliente.cpf,cliente.sexo,cliente.telefone,cliente.datanasc,cliente.conjuge,cliente.filhos,cliente.pai,cliente.mae,cliente.pagamento,cliente.validade,cliente.cvv,cliente.status
 1,Paulo Branquelão,branquelao@gmail.com,17117117171,M,<NULL>,1990-10-10,Não,Não,Pai,Mãe,<NULL>,<NULL>,<NULL>,INADIMPLENTE
-2,Paulo Doidão,paulodoidao@gmail.com,17117177717,Não definido,<NULL>,2000-01-01,Paulinho,Fifi,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
-3,Paulo Doido da Pedra,paulodoidodapedra@gmail.com,69696969696,Não definido,<NULL>,1969-09-06,Ricardão da Borracharia,Pedrita e BanBan,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
-4,Lauro Teleguiado,lauroteleguiado@gmail.com,1,M,<NULL>,2001-01-01,A dominadora,Fifi,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
-5,Lauro Gps Clonadão,laurogps@gmail.com,2,Não definido,<NULL>,2005-01-01,A GPS maker,não,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
-6,Lauro Pau Mandado,paumandado@gmail.com,3,M,<NULL>,2002-01-01,La Chefona,não,Pai,Mãe,<NULL>,<NULL>,<NULL>,<NULL>
-7,Lauro Teleguiadão,lauroteleguiadao@gmail.com,4,M,<NULL>,2002-02-01,AguiadoradePlay,8,Pai,Mãe,<NULL>,<NULL>,<NULL>,<NULL>
-8,Guilherme do Python,guilhermedopython@gmail.com,909300303030,M,<NULL>,2000-02-01,N,n,n,n,<NULL>,<NULL>,<NULL>,<NULL>
-9,Guilherme do cadastro,guilhermedocadastro@gmail.com,9093949449490,M,<NULL>,1991-04-02,N,N,N,N,<NULL>,<NULL>,<NULL>,<NULL>
-10,Bruno teste 4,teste4@gmail.com,909090909099,M,<NULL>,2000-07-01,Lindona,Sim,Rap,Dul,<NULL>,<NULL>,<NULL>,<NULL>
-11,Bruno teste 5,teste5@gmail.com,4464545657544,M,<NULL>,2000-07-23,N,N,N,N,<NULL>,<NULL>,<NULL>,<NULL>
-12,Bruno teste 6,teste6@gmail.com,17117117171,M,<NULL>,2000-07-04,n,n,n,n,<NULL>,<NULL>,<NULL>,<NULL>
-13,Bruno teste 7,teste7@gmail.com,2939292020002,M,<NULL>,2000-06-05,N,N,N,N,<NULL>,<NULL>,<NULL>,<NULL>
-14,Boladão trabalhando Domingo,boladao@gmail.com,4444,M,5199999999,2000-10-10,TESTE,TESTE,TESTE,TESTE,444444444666,2020-03-01,230,<NULL>
+2,Paulo Doidão,paulodoidao@gmail.com,17117177717,Não definido,<NULL>,2000-01-01,Paulinho,Fifi,Pai,Mae,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+3,Paulo Doido da Pedra,paulodoidodapedra@gmail.com,69696969696,Não definido,<NULL>,1969-09-06,Ricardão da Borracharia,Pedrita e BanBan,Pai,Mae,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+4,Lauro Teleguiado,lauroteleguiado@gmail.com,1,M,<NULL>,2001-01-01,A dominadora,Fifi,Pai,Mae,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+5,Lauro Gps Clonadão,laurogps@gmail.com,2,Não definido,<NULL>,2005-01-01,A GPS maker,não,Pai,Mae,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+6,Lauro Pau Mandado,paumandado@gmail.com,3,M,<NULL>,2002-01-01,La Chefona,não,Pai,Mãe,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+7,Lauro Teleguiadão,lauroteleguiadao@gmail.com,4,M,<NULL>,2002-02-01,AguiadoradePlay,8,Pai,Mãe,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+8,Guilherme do Python,guilhermedopython@gmail.com,909300303030,M,<NULL>,2000-02-01,N,n,n,n,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+9,Guilherme do cadastro,guilhermedocadastro@gmail.com,9093949449490,M,<NULL>,1991-04-02,N,N,N,N,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+10,Bruno teste 4,teste4@gmail.com,909090909099,M,<NULL>,2000-07-01,Lindona,Sim,Rap,Dul,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+11,Bruno teste 5,teste5@gmail.com,4464545657544,M,<NULL>,2000-07-23,N,N,N,N,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+12,Bruno teste 6,teste6@gmail.com,17117117171,M,<NULL>,2000-07-04,n,n,n,n,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+13,Bruno teste 7,teste7@gmail.com,2939292020002,M,<NULL>,2000-06-05,N,N,N,N,<NULL>,<NULL>,<NULL>,ADIMPLENTE
+14,Boladão trabalhando Domingo,boladao@gmail.com,4444,M,5199999999,2000-10-10,TESTE,TESTE,TESTE,TESTE,444444444666,2020-03-01,230,ADIMPLENTE

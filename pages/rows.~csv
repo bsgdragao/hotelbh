@@ -1,5 +1,5 @@
 cliente.id,cliente.nome,cliente.email,cliente.cpf,cliente.sexo,cliente.telefone,cliente.datanasc,cliente.conjuge,cliente.filhos,cliente.pai,cliente.mae,cliente.pagamento,cliente.validade,cliente.cvv,cliente.status
-1,Paulo Branquelão,branquelao@gmail.com,17117117171,M,<NULL>,1990-10-10,Não,Não,Pai,Mãe,<NULL>,<NULL>,<NULL>,<NULL>
+1,Paulo Branquelão,branquelao@gmail.com,17117117171,M,<NULL>,1990-10-10,Não,Não,Pai,Mãe,<NULL>,<NULL>,<NULL>,INADIMPLENTE
 2,Paulo Doidão,paulodoidao@gmail.com,17117177717,Não definido,<NULL>,2000-01-01,Paulinho,Fifi,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
 3,Paulo Doido da Pedra,paulodoidodapedra@gmail.com,69696969696,Não definido,<NULL>,1969-09-06,Ricardão da Borracharia,Pedrita e BanBan,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
 4,Lauro Teleguiado,lauroteleguiado@gmail.com,1,M,<NULL>,2001-01-01,A dominadora,Fifi,Pai,Mae,<NULL>,<NULL>,<NULL>,<NULL>
